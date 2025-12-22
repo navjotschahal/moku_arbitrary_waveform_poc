@@ -1,0 +1,7 @@
+# Local environment variables (do not commit)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
