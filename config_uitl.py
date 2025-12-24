@@ -7,7 +7,9 @@ that once at program startup.
 from __future__ import annotations
 
 import os
+import dotenv
 
+dotenv.load_dotenv()
 
 _TRUE = {"1", "true", "t", "yes", "y", "on"}
 _FALSE = {"0", "false", "f", "no", "n", "off"}
@@ -20,6 +22,7 @@ def get_env_str(name: str, default: str | None = None, *, strip: bool = True) ->
     """
 
     raw = os.getenv(name)
+    print(f"Environment variable {name} = {raw}")
     if raw is None or raw == "":
         return default
     return raw.strip() if strip else raw
